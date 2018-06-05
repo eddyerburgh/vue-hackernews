@@ -1,13 +1,13 @@
 <template>
-  <item-list />
+  <item />
 </template>
 
 <script>
-import ItemList from './views/ItemList.vue'
+import Item from '../components/Item.vue'
 
 export default {
   components: {
-    ItemList,
+    Item
   }
 }
 </script>
