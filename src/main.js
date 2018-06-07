@@ -9,8 +9,8 @@ function getTopItems () {
     .then(items => items)
 }
 
-getTopItems().then(res => {
-  window.items = res
+getTopItems().then((items) => {
+  window.items = items
   new Vue({
     el: '#app',
     render: h => h(App)
