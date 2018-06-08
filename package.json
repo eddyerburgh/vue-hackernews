@@ -12,10 +12,11 @@
     "vue": "^2.5.16"
   },
   "devDependencies": {
-    "babel-core": "^7.0.0-bridge.0",
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.16",
     "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-standard": "^3.0.0-beta.16",
+    "babel-core": "^7.0.0-bridge.0",
     "vue-template-compiler": "^2.5.16"
   },
   "eslintConfig": {
@@ -25,9 +26,14 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "plugin:vue/essential",
+      "@vue/standard"
     ],
-    "rules": {},
+    "rules": {
+      "prefer-promise-reject-errors": 0,
+      "no-new": 0
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
