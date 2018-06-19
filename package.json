@@ -17,6 +17,7 @@
     "@vue/cli-service": "^3.0.0-beta.15",
     "@vue/eslint-config-standard": "^3.0.0-beta.16",
     "babel-core": "^7.0.0-bridge.0",
+    "cross-env": "^5.2.0",
     "vue-template-compiler": "^2.5.16"
   },
   "eslintConfig": {
@@ -25,8 +26,6 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
       "plugin:vue/essential",
       "@vue/standard"
     ],
