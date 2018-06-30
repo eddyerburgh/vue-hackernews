@@ -86,6 +86,7 @@ describe('ItemList.vue', () => {
   })
 
   test('calls $bar fail when fetchListData throws', async () => {
+    expect.assertions(1)
     const store = createStore({
       actions: { fetchListData: jest.fn(() => Promise.reject()) }
     })
