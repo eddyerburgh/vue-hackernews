@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner.vue renders correctly 1`] = `
+<svg
+  class="spinner"
+  height="44px"
+  viewBox="0 0 44 44"
+  width="44px"
+>
+  <circle
+    class="path"
+    cx="22"
+    cy="22"
+    fill="none"
+    r="20"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+</svg>
+`;

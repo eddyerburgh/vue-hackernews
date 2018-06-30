@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item.vue renders correctly 1`] = `
+<li
+  class="item"
+>
+  <span
+    class="score"
+  >
+    10
+  </span>
+   
+  <span
+    class="title"
+  >
+    <a
+      href="https://vue-test-utils.vuejs.org/"
+      rel="noopener"
+      target="_blank"
+    >
+      vue-test-utils is released
+    </a>
+     
+    <span
+      class="host"
+    >
+       (vue-test-utils.vuejs.org)
+    </span>
+  </span>
+   
+  <br />
+   
+  <span
+    class="meta"
+  >
+    <span
+      class="by"
+    >
+      
+      by 
+      <a>
+        eddyerburgh
+      </a>
+    </span>
+     
+    <span
+      class="comments-link"
+    >
+      
+      | 
+      <a>
+         comments
+      </a>
+    </span>
+     
+    <span>
+      
+      10 minutes ago
+    
+    </span>
+  </span>
+</li>
+`;
+
+exports[`Item.vue renders correctly when item has no url 1`] = `
+<li
+  class="item"
+>
+  <span
+    class="score"
+  >
+    10
+  </span>
+   
+  <span
+    class="title"
+  >
+    <a
+      rel="noopener"
+      target="_blank"
+    >
+      vue-test-utils is released
+    </a>
+     
+    <span
+      class="host"
+    >
+       ()
+    </span>
+  </span>
+   
+  <br />
+   
+  <span
+    class="meta"
+  >
+    <span
+      class="by"
+    >
+      
+      by 
+      <a>
+        eddyerburgh
+      </a>
+    </span>
+     
+    <span
+      class="comments-link"
+    >
+      
+      | 
+      <a>
+         comments
+      </a>
+    </span>
+     
+    <span>
+      
+      10 minutes ago
+    
+    </span>
+  </span>
+</li>
+`;

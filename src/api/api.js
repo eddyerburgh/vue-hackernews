@@ -1,11 +1,11 @@
-import Firebase from 'firebase/app'
-import 'firebase/database'
+import { createAPI } from 'create-api'
 
-Firebase.initializeApp({
-  databaseURL: 'https://hacker-news.firebaseio.com'
+const api = createAPI({
+  version: '/v0',
+  config: {
+    databaseURL: 'https://hacker-news.firebaseio.com'
+  }
 })
-
-const api = Firebase.database().ref('/v0')
 
 function fetch (child) {
   const cache = api.cachedItems

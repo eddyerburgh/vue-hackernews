@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "npm run build && node scripts/serve",
+    "build": "npm run build:server && mv dist/vue-ssr-server-bundle.json bundle && npm run build:client && mv bundle dist/vue-ssr-server-bundle.json",
+    "build:client": "vue-cli-service build",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build",
+    "start": "cross-env NODE_ENV=production node scripts/start",
     "lint": "vue-cli-service lint",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "cross-env VUE_CLI_BABEL_TRANSPILE_MODULES=true VUE_CLI_BABEL_TARGET_NODE=true jest",
-    "test:unit:debug": "cross-env VUE_CLI_BABEL_TRANSPILE_MODULES=true VUE_CLI_BABEL_TARGET_NODE=true  node --inspect-brk jest"
+    "test:unit:debug": "cross-env VUE_CLI_BABEL_TRANSPILE_MODULES=true VUE_CLI_BABEL_TARGET_NODE=true node --inspect-brk jest"
   },
   "dependencies": {
     "firebase": "^5.0.4",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.16",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
@@ -22,16 +26,17 @@
     "@vue/cli-plugin-eslint": "^3.0.0-beta.16",
     "@vue/cli-service": "^3.0.0-beta.15",
     "@vue/eslint-config-standard": "^3.0.0-beta.16",
-    "@vue/test-utils": "^1.0.0-beta.19",
+    "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
+    "babel-jest": "^23.2.0",
     "cross-env": "^5.2.0",
     "flush-promises": "^1.0.0",
-    "jest": "^23.1.0",
+    "jest": "^23.2.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.merge": "^4.6.1",
     "vue-jest": "^2.6.0",
-    "vue-template-compiler": "^2.5.16"
+    "vue-template-compiler": "^2.5.16",
+    "webpack-node-externals": "^1.7.2"
   },
   "eslintConfig": {
     "root": true,
@@ -66,6 +71,8 @@
       "^.+\\.js$": "babel-jest",
       "^.+\\.vue$": "vue-jest"
     },
-    "setupFiles": ["./test-setup.js"]
+    "setupFiles": [
+      "./test-setup.js"
+    ]
   }
 }
