@@ -1,12 +1,29 @@
-import { shallowMount } from '@vue/test-utils'
+import {
+  shallowMount,
+  RouterLinkStub
+} from '@vue/test-utils'
 import Item from '../Item.vue'
+import merge from 'lodash.merge'
+
+function createWrapper (overrides) {
+  const defaultMountingOptions = {
+    stubs: {
+      RouterLink: RouterLinkStub
+    },
+    propsData: {
+      item: {}
+    }
+  }
+  return shallowMount(Item, merge(defaultMountingOptions, overrides))
+}
 
 describe('Item.vue', () => {
   test('renders the hostname', () => {
     const item = {
       url: 'https://some-url.com/with-paths'
     }
-    const wrapper = shallowMount(Item, {
+
+    const wrapper = createWrapper({
       propsData: {
         item
       }
@@ -18,8 +35,10 @@ describe('Item.vue', () => {
     const item = {
       score: 10
     }
-    const wrapper = shallowMount(Item, {
-      propsData: { item }
+    const wrapper = createWrapper({
+      propsData: {
+        item
+      }
     })
     expect(wrapper.text()).toContain(item.score)
   })
@@ -28,8 +47,10 @@ describe('Item.vue', () => {
     const item = {
       by: 'some author'
     }
-    const wrapper = shallowMount(Item, {
-      propsData: { item }
+    const wrapper = createWrapper({
+      propsData: {
+        item
+      }
     })
     expect(wrapper.text()).toContain(item.by)
   })
@@ -39,8 +60,10 @@ describe('Item.vue', () => {
       url: 'http://some-url.com',
       title: 'some-title'
     }
-    const wrapper = shallowMount(Item, {
-      propsData: { item }
+    const wrapper = createWrapper({
+      propsData: {
+        item
+      }
     })
     const a = wrapper.find('a')
     expect(a.text()).toBe(item.title)
@@ -56,7 +79,7 @@ describe('Item.vue', () => {
     const item = {
       time: (dateNowTime / 1000) - 600
     }
-    const wrapper = shallowMount(Item, {
+    const wrapper = createWrapper({
       propsData: {
         item
       }
