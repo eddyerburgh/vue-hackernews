@@ -1,6 +1,9 @@
 export default {
   displayItems (state) {
-    return state.items.slice(0, 20)
+    const page = Number(state.route.params.page) || 1
+    const start = (page - 1) * 20
+    const end = page * 20
+    return state.items.slice(start, end)
   },
   maxPage (state) {
     return Math.ceil(state.items.length / 20)
