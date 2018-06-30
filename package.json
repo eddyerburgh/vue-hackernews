@@ -13,6 +13,7 @@
   "dependencies": {
     "firebase": "^5.0.4",
     "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
