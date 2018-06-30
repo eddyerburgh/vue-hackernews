@@ -35,6 +35,9 @@ module.exports = {
     optimization: {
       splitChunks: undefined
     },
+    performance: {
+      hints: false
+    },
     resolve: {
       alias: {
         'create-api': createApiFile

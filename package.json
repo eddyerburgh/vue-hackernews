@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "npm run build && node scripts/serve",
-    "build": "npm run build:server && mv dist/vue-ssr-server-bundle.json bundle && npm run build:client && mv bundle dist/vue-ssr-server-bundle.json",
+    "build": "npm run build:server -- --silent && npm run build:client -- --no-clean --silent",
     "build:client": "vue-cli-service build",
     "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build",
     "start": "cross-env NODE_ENV=production node scripts/start",
@@ -17,14 +17,14 @@
     "firebase": "^5.0.4",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.16",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.16",
-    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/cli": "^3.0.0-rc.3",
+    "@vue/cli-plugin-babel": "^3.0.0-rc.3",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.3",
+    "@vue/cli-service": "^3.0.0-rc.3",
     "@vue/eslint-config-standard": "^3.0.0-beta.16",
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "^7.0.0-bridge.0",
@@ -32,9 +32,11 @@
     "cross-env": "^5.2.0",
     "flush-promises": "^1.0.0",
     "jest": "^23.2.0",
+    "jest-vue": "^0.8.2",
     "lodash.clonedeep": "^4.5.0",
     "lodash.merge": "^4.6.1",
     "vue-jest": "^2.6.0",
+    "vue-server-renderer": "^2.5.16",
     "vue-template-compiler": "^2.5.16",
     "webpack-node-externals": "^1.7.2"
   },
@@ -73,6 +75,14 @@
     },
     "setupFiles": [
       "./test-setup.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
     ]
   }
 }

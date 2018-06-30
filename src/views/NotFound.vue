@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    404
+    <h1>404</h1>
+    <p>The page you're looking for could not be found. Try selecting one of the lists in the nav bar.</p>
   </div>
 </template>
 
