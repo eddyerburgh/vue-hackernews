@@ -28,6 +28,10 @@
 <script>
 import Item from '../components/Item.vue'
 
+function capitalizeFirstLetter (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 export default {
   components: {
     Item
@@ -35,6 +39,10 @@ export default {
   beforeMount () {
     this.loadItems()
   },
+  title () {
+    return `${capitalizeFirstLetter(this.$route.params.type)}`
+  },
+
   computed: {
     type () {
       return this.$route.params.type
@@ -50,14 +58,14 @@ export default {
     loadItems () {
       this.$bar.start()
       this.$store.dispatch('fetchListData', {
-        type: this.type // #A
+        type: this.type
       }).then(() => {
         if (this.page &&
         (this.page > this.maxPage ||
         this.page <= 0 ||
         !Number(this.page)
-        )) { // #B
-          this.$router.replace(`/${this.type}/1`) // #C
+        )) {
+          this.$router.replace(`/${this.type}/1`)
           return
         }
         this.$bar.finish()
