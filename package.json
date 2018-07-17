@@ -66,6 +66,8 @@
       "^.+\\.js$": "babel-jest",
       "^.+\\.vue$": "vue-jest"
     },
-    "setupFiles": ["./test-setup.js"]
+    "setupFiles": [
+      "./test-setup.js"
+    ]
   }
 }
