@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="4">
+
+  <testsuite name="journeys"
+    errors="0" failures="0" hostname="" id="" package="journeys" skipped="0"
+    tests="4" time="14.39" timestamp="Fri, 26 Oct 2018 23:57:12 GMT">
+  
+    <testcase name="takes user to the item page" classname="journeys" time="5.378" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="clicking on a user redirects to  the user page" classname="journeys" time="3.272" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="paginates items correctly" classname="journeys" time="4.168" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="changes list by clicking through nav" classname="journeys" time="1.570" assertions="5">
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
