@@ -2,7 +2,7 @@ import { createApp } from './app'
 
 export default context => {
   return new Promise((resolve, reject) => {
-    const { app, router } = createApp()
+    const { app, router, store } = createApp()
 
     const { url } = context
     const { fullPath } = router.resolve(url).route
@@ -11,8 +11,24 @@ export default context => {
       return reject({ url: fullPath })
     }
 
-    router.push(url)
-
-    resolve(app)
+  router.push(url)
+    const matchedComponents = router.getMatchedComponents()
+    Promise.all([
+      // Async data
+      ...matchedComponents.map(Component => {
+        if (Component.asyncData) {
+          return Component.asyncData({
+            store,
+            route: router.currentRoute
+          })
+        }
+      })
+    ]).then(() => {
+      context.state = store.state
+      resolve(app)
+    })
+  })
+  .catch((err) => {
+    console.log(err)
   })
 }

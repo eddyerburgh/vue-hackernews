@@ -42,7 +42,9 @@ export default {
   title () {
     return `${capitalizeFirstLetter(this.$route.params.type)}`
   },
-
+  asyncData ({ store, route: { params: { type } } }) {
+    return store.dispatch('fetchListData', { type })
+  },
   computed: {
     type () {
       return this.$route.params.type

@@ -19,7 +19,7 @@ export default {
         commit('setComments', { comments })
         return Promise.all(
           comments.map(item =>
-            dispatch('fetchComments', {item})
+            dispatch('fetchComments', { item })
           )
         )
       })

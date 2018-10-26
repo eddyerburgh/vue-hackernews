@@ -26,7 +26,10 @@ export default {
       return this.$store.state.user
     }
   },
-  beforeCreate () {
+  asyncData ({ store, route: { params: { id } } }) {
+    return store.dispatch('fetchUser', { id })
+  },
+  beforeMount () {
     const id = this.$route.params.id
     return this.$store.dispatch('fetchUser', { id })
   },

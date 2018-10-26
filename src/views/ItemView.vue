@@ -42,6 +42,9 @@ export default {
       return this.$store.state.item
     }
   },
+  asyncData ({ store, route: { params: { id } } }) {
+    return store.dispatch('fetchItem', { id })
+  },
   title () {
     return 'Item'
   },

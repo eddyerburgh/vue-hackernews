@@ -123,7 +123,7 @@ describe('ItemList.vue', () => {
         maxPage: () => 5
       }
     })
-    const wrapper = createWrapper({store})
+    const wrapper = createWrapper({ store })
     expect(wrapper.text()).toContain('1/5')
   })
 
