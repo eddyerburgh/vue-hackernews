@@ -27,7 +27,4 @@ export default context => {
       resolve(app)
     })
   })
-    .catch((err) => {
-      console.log(err)
-    })
 }

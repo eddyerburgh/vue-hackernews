@@ -73,7 +73,9 @@ app.get('*', (req, res) => {
         console.error(err.stack)
       }
     }
-    context.renderState()
+    if (context.renderState) {
+      context.renderState()
+    }
     res.status(context.HTTPStatus || 200)
     res.send(html)
   })
