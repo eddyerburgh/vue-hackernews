@@ -11,7 +11,7 @@ export default context => {
       return reject({ url: fullPath })
     }
 
-  router.push(url)
+    router.push(url)
     const matchedComponents = router.getMatchedComponents()
     Promise.all([
       // Async data
@@ -28,7 +28,7 @@ export default context => {
       resolve(app)
     })
   })
-  .catch((err) => {
-    console.log(err)
-  })
+    .catch((err) => {
+      console.log(err)
+    })
 }
