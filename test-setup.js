@@ -7,8 +7,8 @@ import {
   host
 } from './src/util/filters'
 
-Vue.config.productionTip = false // #A
+Vue.config.productionTip = false
 
-Vue.mixin(titleMixin) // #B
+Vue.mixin(titleMixin)
 Vue.filter('timeAgo', timeAgo)
 Vue.filter('host', host)

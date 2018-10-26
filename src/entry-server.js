@@ -14,7 +14,6 @@ export default context => {
     router.push(url)
     const matchedComponents = router.getMatchedComponents()
     Promise.all([
-      // Async data
       ...matchedComponents.map(Component => {
         if (Component.asyncData) {
           return Component.asyncData({

@@ -2,18 +2,18 @@ export function host (url) {
   if (!url) {
     return ''
   }
-  const host = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '') // #A
-  const parts = host.split('.').slice(-3) // #B
+  const host = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '')
+  const parts = host.split('.').slice(-3)
   if (parts[0] === 'www') {
-    parts.shift() // #C
+    parts.shift()
   }
-  return parts.join('.') // #D
+  return parts.join('.')
 }
 
 export function timeAgo (time) {
-  const between = Date.now() / 1000 - Number(time) // #A
-  if (between < 3600) { // #B
-    return pluralize((between / 60), ' minute') // #C
+  const between = Date.now() / 1000 - Number(time)
+  if (between < 3600) {
+    return pluralize((between / 60), ' minute')
   } else if (between < 86400) {
     return pluralize((between / 3600), ' hour')
   } else {
@@ -21,8 +21,8 @@ export function timeAgo (time) {
   }
 }
 
-function pluralize (time, label) { // #D
-  const roundedTime = Math.round(time) // #E
+function pluralize (time, label) {
+  const roundedTime = Math.round(time)
   if (roundedTime === 1) {
     return roundedTime + label
   }

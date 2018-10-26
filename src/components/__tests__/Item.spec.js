@@ -92,9 +92,9 @@ describe('Item.vue', () => {
     const dateNow = jest.spyOn(Date, 'now')
     const dateNowTime = new Date('2018')
 
-    dateNow.mockImplementation(() => dateNowTime) // #A
+    dateNow.mockImplementation(() => dateNowTime)
 
-    const item = { // #B
+    const item = {
       by: 'eddyerburgh',
       id: 11122233,
       score: 10,
@@ -103,13 +103,13 @@ describe('Item.vue', () => {
       type: 'story',
       url: 'https://vue-test-utils.vuejs.org/'
     }
-    const wrapper = createWrapper({ // #C
+    const wrapper = createWrapper({
       propsData: {
         item
       }
     })
     dateNow.mockRestore()
-    expect(wrapper.element).toMatchSnapshot() // #D
+    expect(wrapper.element).toMatchSnapshot()
   })
 
   test('renders correctly when item has no url', () => {
@@ -118,7 +118,7 @@ describe('Item.vue', () => {
 
     dateNow.mockImplementation(() => dateNowTime)
 
-    const item = { // #A
+    const item = {
       by: 'eddyerburgh',
       id: 11122233,
       score: 10,
