@@ -10,8 +10,9 @@
     "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build",
     "start": "cross-env NODE_ENV=production node scripts/start",
     "lint": "vue-cli-service lint",
-    "test": "npm run lint && npm run test:unit",
-    "test:unit": "jest --no-cache",
+    "test": "npm run lint && npm run test:unit && npm run test:integration",
+    "test:integration": "npm run build && jest --testEnvironment node --forceExit server.spec.js",
+    "test:unit": "jest src --no-cache",
     "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand"
   },
   "dependencies": {
