@@ -16,7 +16,9 @@
     "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand"
   },
   "dependencies": {
+    "@vue/server-test-utils": "^1.0.0-beta.25",
     "firebase": "^5.0.4",
+    "supertest": "^3.3.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
