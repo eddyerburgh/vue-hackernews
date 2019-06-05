@@ -14,7 +14,7 @@ localVue.use(Vuex)
 
 function createItems () {
   const arr = new Array(22)
-  return arr.fill().map((item, i) => ({id: `a${i}`, name: 'item'}))
+  return arr.fill().map((item, i) => ({ id: `a${i}`, name: 'item' }))
 }
 
 describe('store-config', () => {

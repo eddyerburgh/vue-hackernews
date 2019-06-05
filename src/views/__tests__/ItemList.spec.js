@@ -31,7 +31,7 @@ describe('ItemList.vue', () => {
     const items = [{}, {}, {}]
     storeOptions.getters.displayItems.mockReturnValue(items)
     const wrapper = shallowMount(ItemList, {
-      mocks: {$bar},
+      mocks: { $bar },
       localVue,
       store
     })
@@ -47,7 +47,7 @@ describe('ItemList.vue', () => {
       start: jest.fn(),
       finish: () => {}
     }
-    shallowMount(ItemList, {mocks: {$bar}, localVue, store})
+    shallowMount(ItemList, { mocks: { $bar }, localVue, store })
     expect($bar.start).toHaveBeenCalled()
   })
 
@@ -57,7 +57,7 @@ describe('ItemList.vue', () => {
       start: () => {},
       finish: jest.fn()
     }
-    shallowMount(ItemList, {mocks: {$bar}, localVue, store})
+    shallowMount(ItemList, { mocks: { $bar }, localVue, store })
     await flushPromises()
     expect($bar.finish).toHaveBeenCalled()
   })
@@ -69,7 +69,7 @@ describe('ItemList.vue', () => {
       finish: () => {}
     }
     store.dispatch = jest.fn(() => Promise.resolve())
-    shallowMount(ItemList, {mocks: {$bar}, localVue, store})
+    shallowMount(ItemList, { mocks: { $bar }, localVue, store })
     expect(store.dispatch).toHaveBeenCalledWith('fetchListData', {
       type: 'top'
     })
@@ -82,7 +82,7 @@ describe('ItemList.vue', () => {
       fail: jest.fn()
     }
     storeOptions.actions.fetchListData.mockRejectedValue()
-    shallowMount(ItemList, {mocks: {$bar}, localVue, store})
+    shallowMount(ItemList, { mocks: { $bar }, localVue, store })
     await flushPromises()
     expect($bar.fail).toHaveBeenCalled()
   })

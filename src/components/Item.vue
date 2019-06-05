@@ -1,5 +1,5 @@
 <template>
-  <li class="item">
+  <li class="news-item">
     <span class="score">{{ item.score }}</span>
     <span class="title">
       <a :href="item.url" target="_blank" rel="noopener">{{ item.title }}</a>
@@ -21,14 +21,14 @@ export default {
 </script>
 
 <style scoped>
-.item {
+.news-item {
   background-color: #fff;
   padding: 20px 30px 20px 80px;
   border-bottom: 1px solid #eee;
   position: relative;
   line-height: 20px;
 }
-.item .score {
+.news-item .score {
   color: #f60;
   font-size: 1.1em;
   font-weight: 700;
@@ -39,18 +39,18 @@ export default {
   text-align: center;
   margin-top: -10px;
 }
-.item .meta,
-.item .host {
+.news-item .meta,
+.news-item .host {
   font-size: 0.85em;
   color: #828282;
 }
-.item .meta a,
-.item .host a {
+.news-item .meta a,
+.news-item .host a {
   color: #828282;
   text-decoration: underline;
 }
-.item .meta a:hover,
-.item .host a:hover {
+.news-item .meta a:hover,
+.news-item .host a:hover {
   color: #f60;
 }
 </style>
