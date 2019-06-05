@@ -2,7 +2,7 @@ module.exports = {
   'takes user to the item page': function (browser) {
     browser
       .url('http://localhost:8080') // #A
-      .waitForElementVisible('.item', 15000)
+      .waitForElementVisible('.news-item', 15000)
       .click('.comments-link') // #C
       .assert.urlContains(`/item`) // #D
       .waitForElementVisible('.item-view', 15000) // #E
@@ -11,7 +11,7 @@ module.exports = {
   'clicking on a user redirects to  the user page': function (browser) {
     browser
       .url('http://localhost:8080')
-      .waitForElementVisible('.item', 15000)
+      .waitForElementVisible('.news-item', 15000)
       .click('.by a') // #A
       .assert.urlContains(`/user`) // #B
       .waitForElementVisible('.user-view', 30000) // #C
@@ -21,7 +21,7 @@ module.exports = {
     let originalItemListText
     browser
       .url('http://localhost:8080')
-      .waitForElementVisible('.item', 15000) // #A
+      .waitForElementVisible('.news-item', 15000) // #A
       .getText('.item-list', function (result) { // #B
         originalItemListText = result.value.slice(0, 100)
       })
@@ -43,7 +43,7 @@ module.exports = {
     let originalItemListText
     browser
       .url('http://localhost:8080')
-      .waitForElementVisible('.item', 15000) // #A
+      .waitForElementVisible('.news-item', 15000) // #A
       .getText('.item-list', function (result) { // #B
         originalItemListText = result.value.slice(0, 100)
       })
