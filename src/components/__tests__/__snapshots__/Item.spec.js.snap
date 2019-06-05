@@ -2,7 +2,7 @@
 
 exports[`Item.vue renders correctly 1`] = `
 <li
-  class="item"
+  class="news-item"
 >
   <span
     class="score"
@@ -64,7 +64,7 @@ exports[`Item.vue renders correctly 1`] = `
 
 exports[`Item.vue renders correctly when item has no url 1`] = `
 <li
-  class="item"
+  class="news-item"
 >
   <span
     class="score"
