@@ -1,13 +1,36 @@
 <template>
-  <item />
+  <div>
+    {{itemList.lenght}}
+    <ol >
+      <li v-for="item in itemList" :key="item.id">
+        <Item :info="item" />
+      </li>
+    </ol>
+  </div>
 </template>
 
 <script>
-import Item from '../components/Item.vue'
-
+import { fetchListData } from "./../api/api.js";
+import Item from './../components/Item.vue';
 export default {
-  components: {
-    Item
-  }
-}
+    name: 'ItemList',
+    data() {
+        return{
+        itemList: []
+        };
+    },
+    components: {
+      Item
+    },
+    created() {
+        this.fetchItemList();
+    },
+    methods: {
+       async fetchItemList() {
+            this.itemList = await fetchListData('top')
+        }
+    }
+};
 </script>
+
+<style lang="scss" scoped></style>

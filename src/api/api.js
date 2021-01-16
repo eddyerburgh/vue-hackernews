@@ -24,9 +24,9 @@ function fetch (child) {
   }
 }
 
-export function fetchListData (type) {
-  return fetchIdsByType(type)
-    .then((ids) => fetchItems(ids))
+export async function fetchListData (type) {
+  const ids = await fetchIdsByType(type)
+  if (ids) return fetchItems(ids);
 }
 
 export function fetchIdsByType (type) {
